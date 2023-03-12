@@ -1,6 +1,5 @@
 .popular-home {
   display: flex;
-  width: 100dvw;
   flex-direction: column;
   background-color: #131313;
 }
