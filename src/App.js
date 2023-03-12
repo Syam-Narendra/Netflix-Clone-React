@@ -5,6 +5,7 @@ import './App.css'
 import ProtectedRoute from './components/ProtectedRoute/index'
 import Home from './components/Home/index'
 import Login from './components/Login/index'
+import PopularPage from './components/PopularPage/index'
 
 class App extends Component {
   render() {
@@ -12,6 +13,7 @@ class App extends Component {
       <Switch>
         <ProtectedRoute exact path="/" component={Home} />
         <Route exact path="/login" component={Login} />
+        <ProtectedRoute exac path="/popular" component={PopularPage} />
       </Switch>
     )
   }

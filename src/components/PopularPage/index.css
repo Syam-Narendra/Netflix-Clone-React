@@ -1,0 +1,28 @@
+.popular-home {
+  display: flex;
+  width: 100vw;
+  flex-direction: column;
+  background-color: #131313;
+}
+.popular-image {
+  height: 100px;
+  width: 90px;
+  border-radius: 8px;
+  margin: 10px;
+}
+.popular-list-container {
+  flex-grow: 1;
+  padding: 5%;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .popular-image {
+    height: 170px;
+    width: 255px;
+  }
+}

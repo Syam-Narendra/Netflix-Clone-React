@@ -23,25 +23,29 @@ class Home extends Component {
 
   getData = async () => {
     const token = Cookies.get('jwt_token')
-    const response = await fetch(originalsUrl, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    })
-    const data = await response.json()
-    const res = data.results
-    const randomNum = Math.floor(Math.random() * 10)
-    let homeTitle = res[randomNum].title
-    homeTitle = homeTitle.charAt(0).toUpperCase() + homeTitle.slice(1)
-    const homeOverview = res[randomNum].overview
-    const imgUrl = res[randomNum].backdrop_path
-    console.log(randomNum)
-    this.setState({
-      homeTitle,
-      homeOverview,
-      imgUrl,
-      homePageStatus: status.success,
-    })
+    try {
+      const response = await fetch(originalsUrl, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      const data = await response.json()
+      const res = data.results
+      const randomNum = Math.floor(Math.random() * 10)
+      let homeTitle = res[randomNum].title
+      homeTitle = homeTitle.charAt(0).toUpperCase() + homeTitle.slice(1)
+      const homeOverview = res[randomNum].overview
+      const imgUrl = res[randomNum].backdrop_path
+      console.log(randomNum)
+      this.setState({
+        homeTitle,
+        homeOverview,
+        imgUrl,
+        homePageStatus: status.success,
+      })
+    } catch {
+      this.setState({homePageStatus: status.failed})
+    }
   }
 
   renderHomeBanner = () => {
