@@ -1,0 +1,77 @@
+.login-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  background-color: black;
+}
+.movies-heading {
+  height: 100px;
+  width: 250px;
+  left: 8.89%;
+  right: 63.33%;
+  top: 5%;
+  padding: 5%;
+  border-radius: 0px;
+  color: #e50014;
+}
+.error-message {
+  color: red;
+}
+.login-text {
+  color: white;
+  height: 40px;
+  width: 80px;
+  font-family: Roboto;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 40px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.user-name-text {
+  color: white;
+}
+.input-box {
+  background: #333333;
+  border: 0px;
+  height: 40px;
+  width: 296px;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  border-radius: 5px;
+  background-color: transparent;
+  border: 0.5px solid white;
+  color: white;
+}
+.input-container {
+  display: flex;
+  padding: 5%;
+  flex-direction: column;
+}
+.sign-in-button {
+  color: white;
+  background-color: #e50014;
+  border: none;
+  width: 296px;
+  font-family: 'Roboto';
+  font-weight: 500;
+  padding: 10px;
+  margin-top: 15px;
+  font-size: 15px;
+}
+
+@media screen and (min-width: 768px) {
+  .movies-heading {
+    top: 32px;
+    left: 32px;
+    padding: 2%;
+  }
+  .login-container {
+    background-image: url('https://i.ibb.co/hx5fC4R/netfilx-1.png');
+  }
+  .input-container {
+    background-image: url('https://i.ibb.co/Rvrb2GT/Rectangle-1448.png');
+    align-self: center;
+  }
+}

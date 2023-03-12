@@ -1,0 +1,9 @@
+.slick {
+  color: white;
+  min-width: 100%;
+}
+.backdrop-image {
+  width: 90%;
+  height: 100%;
+  border-radius: 8px;
+}

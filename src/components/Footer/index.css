@@ -1,0 +1,12 @@
+.footer {
+  display: flex;
+  color: white;
+  flex-direction: column;
+  align-items: center;
+}
+.icons {
+  display: flex;
+}
+.icon {
+  margin-left: 10px;
+}
