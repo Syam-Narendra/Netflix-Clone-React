@@ -1,0 +1,120 @@
+.movie-detail-main {
+  min-height: 100vh;
+  max-height: fit-content;
+  background-color: #131313;
+  display: flex;
+  flex-direction: column;
+}
+.movie-detail-banner {
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-size: 100% 100%;
+}
+.specific-movie-details {
+  padding: 3%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.time-certificate-container {
+  display: flex;
+  align-items: center;
+}
+.movie-detail-title {
+  font-size: 16px;
+  margin: 0px;
+}
+.movie-detail-overview {
+  margin: 0px;
+}
+.movie-detail-play-button {
+  margin-top: 10px;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 2px;
+  padding: 10px;
+  width: 76px;
+  font-size: 14px;
+  line-height: 16px;
+}
+.movie-certificate {
+  border: 1px solid white;
+  padding: 5px;
+  font-size: 10px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.movie-other-bottom-container {
+  color: white;
+  display: flex;
+  font-family: 'Roboto';
+  padding: 3%;
+  flex-wrap: wrap;
+  justify-content: stretch;
+  justify-items: flex-start;
+  align-items: flex-start;
+}
+.movie-info-heading {
+  color: #64748b;
+  font-size: 15px;
+}
+
+.rating-count-average {
+  margin-left: 10px;
+}
+.similar-movies-list {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 3%;
+  justify-content: stretch;
+}
+.similar-movie-image {
+  width: 90px;
+  height: 100px;
+  border-radius: 8px;
+  margin: 10px;
+}
+.more-heading {
+  color: white;
+  padding-left: 4%;
+  font-size: 16px;
+}
+.movie-details-loader-container {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.similar-movie-button {
+  margin: 0px;
+  width: 90px;
+  background-color: transparent;
+  margin: 10px;
+  border: none;
+}
+@media (min-width: 768px) {
+  .movie-detail-title {
+    font-size: 36px;
+    margin: 0px;
+  }
+  .more-heading {
+    font-size: 25px;
+  }
+  .time-certificate-container {
+    width: 30%;
+  }
+  .movie-other-bottom-container {
+    justify-content: space-around;
+  }
+  .similar-movie-image,
+  .similar-movie-button {
+    width: 170px;
+    height: 255px;
+  }
+}

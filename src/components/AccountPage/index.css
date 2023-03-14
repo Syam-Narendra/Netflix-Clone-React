@@ -1,0 +1,59 @@
+.accounts-page {
+  background-color: #131313;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.account-details-section {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  margin-bottom: 10px;
+}
+.member-ship-div {
+  display: flex;
+  align-items: baseline;
+  border-top: 2px solid #94a3b8;
+  border-bottom: 2px solid #94a3b8;
+}
+.plan-details-div {
+  display: flex;
+  align-items: baseline;
+  border-bottom: 2px solid #94a3b8;
+}
+.member-ship-heading {
+  margin-right: 10px;
+  color: #94a3b8;
+  font-weight: 600;
+  font-family: 'Roboto';
+}
+.password {
+  color: #94a3b8;
+  font-family: 'Roboto';
+}
+.email-premium {
+  color: black;
+  font-size: large;
+}
+
+.ultra-hd {
+  border: 2px solid black;
+  margin-left: 10px;
+  border-radius: 2px;
+  padding: 2px;
+  color: #1e293b;
+}
+.logout-button {
+  display: flex;
+  background-color: #e50914;
+  color: white;
+  margin: 10px;
+  padding: 10px;
+  border: none;
+  align-self: center;
+  border-radius: 4px;
+  cursor: pointer;
+}
