@@ -1,23 +1,17 @@
-import {withRouter} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 const SimilarMovieItem = props => {
-  const onSimilarMovieClick = () => {
-    const {history, data} = props
-    const {id} = data
-    console.log(data)
-    history.push(`/movies/${id}`)
-  }
   const {data} = props
-  const {posterPath, title} = data
+  const {posterPath, title, id} = data
   return (
-    <button
+    <Link
+      to={`/movies/${id}`}
+      target="__blank"
       className="similar-movie-button"
-      onClick={onSimilarMovieClick}
-      type="button"
     >
       <img className="similar-movie-image" src={posterPath} alt={title} />
-    </button>
+    </Link>
   )
 }
 
-export default withRouter(SimilarMovieItem)
+export default SimilarMovieItem
