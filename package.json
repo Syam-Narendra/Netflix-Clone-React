@@ -1,5 +1,5 @@
 {
-  "homepage": "https://Syam-Narendra.github.io/Netflix-Clone-React",
+  "homepage": "https://Syam-Narendra.github.io/Netflix-Clone-React/",
   "name": "movies-app",
   "private": true,
   "version": "1.0.0",
@@ -18,6 +18,7 @@
     "history": "5.0.1",
     "js-cookie": "3.0.1",
     "msw": "0.35.0",
+    "pac": "1.0.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-icons": "4.3.1",
@@ -79,5 +80,17 @@
       "Firefox ESR",
       "not ie < 11"
     ]
+  },
+  "description": "In this project let's build a **Movies App** by applying the concepts we have learned till now. This project allows you to practice the concepts and techniques learned till React Course and apply them in a concrete project.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Syam-Narendra/Netflix-Clone-React.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Syam-Narendra/Netflix-Clone-React/issues"
   }
 }
