@@ -9,6 +9,7 @@ class Login extends Component {
     password: '',
     showError: false,
     errorMsg: '',
+    isButtonLoading: false,
   }
 
   setPassword = event => {
@@ -30,6 +31,7 @@ class Login extends Component {
 
   onSubmitForm = async event => {
     event.preventDefault()
+    this.setState({isButtonLoading: true})
     const {username, password} = this.state
     const userDetails = {username, password}
     const url = 'https://apis.ccbp.in/login'
@@ -42,12 +44,22 @@ class Login extends Component {
     if (response.ok) {
       this.onSubmitSucess(data.jwt_token)
     } else {
-      this.setState({showError: true, errorMsg: data.error_msg})
+      this.setState({
+        showError: true,
+        errorMsg: data.error_msg,
+        isButtonLoading: false,
+      })
     }
   }
 
   render() {
-    const {username, password, showError, errorMsg} = this.state
+    const {
+      username,
+      password,
+      showError,
+      errorMsg,
+      isButtonLoading,
+    } = this.state
     const token = Cookies.get('jwt_token')
     if (token !== undefined) {
       return <Redirect to="/" />
@@ -84,8 +96,8 @@ class Login extends Component {
           />
           {showError && <p className="error-message">{errorMsg}</p>}
 
-          <button type="submit" className="sign-in-button">
-            Login
+          <button id="logInButton" type="submit" className="sign-in-button">
+            {isButtonLoading ? 'Loading' : 'Login'}
           </button>
         </form>
       </div>
