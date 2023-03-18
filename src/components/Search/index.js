@@ -4,6 +4,8 @@ import {Link} from 'react-router-dom'
 import Header from '../Header/index'
 import './index.css'
 
+const searchRoute = true
+
 class Search extends Component {
   state = {searchResultsData: [], showNoResults: false}
 
@@ -53,7 +55,7 @@ class Search extends Component {
     const {showNoResults} = this.state
     return (
       <div className="search-main">
-        <Header searchInput={this.searchInput} />
+        <Header searchRoute={searchRoute} searchInput={this.searchInput} />
         <div className="search-results-container">
           {showNoResults ? <h1>Eror</h1> : this.renderSearchItems()}
         </div>
