@@ -36,7 +36,7 @@ const ReactSlick = props => {
               <img
                 className="backdrop-image"
                 src={each.posterPath}
-                alt={each.name}
+                alt={each.title}
               />
             </div>
           </Link>

@@ -14,8 +14,13 @@
 }
 .search-result-poster {
   height: 150px;
-  width: 110px;
+  width: 90px;
   margin: 10px;
+}
+.no-data-error {
+  color: white;
+  display: flex;
+  flex-direction: column;
 }
 @media (min-width: 768px) {
   .search-result-poster {

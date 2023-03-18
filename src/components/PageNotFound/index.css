@@ -1,0 +1,17 @@
+.page-not-found-container {
+  display: flex;
+  height: 100vh;
+  background-image: url('https://i.ibb.co/tsQKHxR/snow-removal-machine-working-high-ski-slope-snowstorm-454047-2149-1.png');
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-direction: column;
+  background-size: 100% 100%;
+}
+.goto-home-button {
+  background-color: white;
+  border-radius: 4px;
+  padding: 10px;
+  color: black;
+  text-decoration: none;
+}

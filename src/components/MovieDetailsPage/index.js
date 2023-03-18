@@ -124,19 +124,19 @@ class MovieDetailsPage extends Component {
         </div>
 
         <div className="movie-other-bottom-container">
-          <div className="genres-container">
+          <ul className="genres-container">
             <h1 className="movie-info-heading">Genres</h1>
             {genres.map(each => (
               <p key={each.id}>{each.name}</p>
             ))}
-          </div>
+          </ul>
 
-          <div className="audio-available-container">
+          <ul className="audio-available-container">
             <h1 className="movie-info-heading">Audio Available</h1>
             {audioAvailable.map(each => (
               <p key={each.id}>{each.audioName}</p>
             ))}
-          </div>
+          </ul>
 
           <div className="rating-count-average">
             <h1 className="movie-info-heading">Rating Count</h1>
@@ -160,10 +160,20 @@ class MovieDetailsPage extends Component {
   renderLoader = () => (
     <>
       <Header />
-      <div className="movie-details-loader-container">
+      <div testid="loader" className="movie-details-loader-container">
         <Loader type="Oval" color="red" height={40} />
       </div>
     </>
+  )
+
+  renderError = () => (
+    <div className="popular-error-container">
+      <img src="https://i.ibb.co/9V8B71j/Group.png" alt="failure view" />
+      <p>Something went wrong. Please try again</p>
+      <button onClick={this.getMovieDetailsData} type="button">
+        Try Again
+      </button>
+    </div>
   )
 
   renderSwitch = () => {
@@ -174,7 +184,7 @@ class MovieDetailsPage extends Component {
       case status.success:
         return this.renderPage()
       default:
-        return <h1>Error</h1>
+        return this.renderError()
     }
   }
 

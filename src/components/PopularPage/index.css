@@ -11,20 +11,19 @@
   align-items: center;
   justify-content: center;
 }
+.popular-error-container {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  color: white;
+  align-items: center;
+  justify-content: center;
+}
 .popular-image {
   height: 100px;
   width: 90px;
   padding: 10px;
   border-radius: 8px;
-}
-.middleware {
-  flex-grow: 1;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  /* background-color: aqua; */
 }
 .popular-list-container {
   flex-grow: 1;

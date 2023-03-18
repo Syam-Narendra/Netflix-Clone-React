@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom'
 import Loader from 'react-loader-spinner'
 import Header from '../Header/index'
 import Footer from '../Footer/index'
+
 import './index.css'
 
 const status = {loading: 'Loading', success: 'success', failed: 'failed'}
@@ -16,6 +17,7 @@ class PopularPage extends Component {
   }
 
   getPopularData = async () => {
+    this.setState({pageStatus: status.loading})
     const token = Cookies.get('jwt_token')
     try {
       const url = 'https://apis.ccbp.in/movies-app/popular-movies'
@@ -40,33 +42,35 @@ class PopularPage extends Component {
   renderPopularListItems = () => {
     const {popularMovies} = this.state
     return (
-      <div className="middleware">
-        <ul className="popular-list-container">
-          {popularMovies.map(each => (
-            <Link key={each.id} to={`/movies/${each.id}`}>
-              <li className="image-item">
-                <img
-                  className="popular-image"
-                  src={each.backDropPath}
-                  alt={each.title}
-                />
-              </li>
+      <ul className="search-results-container">
+        {popularMovies.map(each => (
+          <li key={each.id}>
+            <Link to={`/movies/${each.id}`}>
+              <img
+                className="search-result-poster"
+                src={each.posterPath}
+                alt={each.title}
+              />
             </Link>
-          ))}
-        </ul>
-      </div>
+          </li>
+        ))}
+      </ul>
     )
   }
 
   renderLoader = () => (
-    <div className="popular-loader-error">
+    <div testid="loader" className="popular-loader-error">
       <Loader type="Oval" color="red" height={40} />
     </div>
   )
 
   renderErrorPage = () => (
-    <div className="popular-loader-error">
-      <h1>Error</h1>
+    <div className="popular-error-container">
+      <img src="https://i.ibb.co/9V8B71j/Group.png" alt="failure view" />
+      <p>Something went wrong. Please try again</p>
+      <button onClick={this.getPopularData} type="button">
+        Try Again
+      </button>
     </div>
   )
 

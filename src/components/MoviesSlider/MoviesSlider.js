@@ -3,6 +3,7 @@ import {Component} from 'react'
 import Cookies from 'js-cookie'
 import './index.css'
 import ReactSlick from '../ReactSlick'
+import FetchErrorTryAgain from '../FetchErrorTryAgain/index'
 
 const status = {loading: 'Loading', success: 'success', failed: 'failed'}
 class MoviesSlider extends Component {
@@ -30,15 +31,6 @@ class MoviesSlider extends Component {
     }
   }
 
-  renderError = () => (
-    <div className="error-page">
-      <p>Something went wrong. Please try again</p>
-      <button type="button" onClick={this.getData}>
-        Try Again
-      </button>
-    </div>
-  )
-
   renderPage = () => {
     const {pageStatus, slidesData} = this.state
     switch (pageStatus) {
@@ -51,7 +43,7 @@ class MoviesSlider extends Component {
       case status.success:
         return <ReactSlick data={slidesData} />
       default:
-        return this.renderError()
+        return <FetchErrorTryAgain getData={this.getData} />
     }
   }
 

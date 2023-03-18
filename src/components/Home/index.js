@@ -5,6 +5,7 @@ import Header from '../Header/index'
 import './index.css'
 import MoviesSlider from '../MoviesSlider/MoviesSlider'
 import Footer from '../Footer/index'
+import FetchErrorTryAgain from '../FetchErrorTryAgain/index'
 
 const trendingUrl = 'https://apis.ccbp.in/movies-app/trending-movies'
 const originalsUrl = 'https://apis.ccbp.in/movies-app/originals'
@@ -23,6 +24,7 @@ class Home extends Component {
 
   getData = async () => {
     const token = Cookies.get('jwt_token')
+    // this.setState({homePageStatus: status.loading})
     try {
       const response = await fetch(originalsUrl, {
         headers: {
@@ -81,7 +83,7 @@ class Home extends Component {
       case status.success:
         return this.renderHomeBanner()
       default:
-        return <h1>Error</h1>
+        return <FetchErrorTryAgain getData={this.getData} />
     }
   }
 
