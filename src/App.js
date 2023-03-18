@@ -8,6 +8,7 @@ import Login from './components/Login/index'
 import PopularPage from './components/PopularPage/index'
 import AccountPage from './components/AccountPage/index'
 import MovieDetailsPage from './components/MovieDetailsPage/index'
+import Search from './components/Search/index'
 
 class App extends Component {
   render() {
@@ -18,6 +19,7 @@ class App extends Component {
         <ProtectedRoute exact path="/popular" component={PopularPage} />
         <ProtectedRoute exact path="/account" component={AccountPage} />
         <ProtectedRoute exact path="/movies/:id" component={MovieDetailsPage} />
+        <ProtectedRoute exact path="/search" component={Search} />
       </Switch>
     )
   }

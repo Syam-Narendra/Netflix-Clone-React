@@ -31,12 +31,11 @@ class Home extends Component {
       })
       const data = await response.json()
       const res = data.results
-      const randomNum = Math.floor(Math.random() * 10)
-      let homeTitle = res[randomNum].title
+      //   const randomNum = Math.floor(Math.random() * 10)
+      let homeTitle = res[0].title
       homeTitle = homeTitle.charAt(0).toUpperCase() + homeTitle.slice(1)
-      const homeOverview = res[randomNum].overview
-      const imgUrl = res[randomNum].backdrop_path
-      console.log(randomNum)
+      const homeOverview = res[0].overview
+      const imgUrl = res[0].backdrop_path
       this.setState({
         homeTitle,
         homeOverview,
