@@ -24,7 +24,7 @@ class Home extends Component {
 
   getData = async () => {
     const token = Cookies.get('jwt_token')
-    // this.setState({homePageStatus: status.loading})
+    this.setState({homePageStatus: status.loading})
     try {
       const response = await fetch(originalsUrl, {
         headers: {

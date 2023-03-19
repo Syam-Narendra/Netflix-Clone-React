@@ -31,6 +31,16 @@ class MoviesSlider extends Component {
     }
   }
 
+  renderErrorPage = () => (
+    <div className="error-page">
+      <img src="https://i.ibb.co/LgfbYZR/Icon.png" alt="failure view" />
+      <p>Something went wrong. Please try again</p>
+      <button onClick={this.getData} type="button">
+        Try Again
+      </button>
+    </div>
+  )
+
   renderPage = () => {
     const {pageStatus, slidesData} = this.state
     switch (pageStatus) {
@@ -43,7 +53,7 @@ class MoviesSlider extends Component {
       case status.success:
         return <ReactSlick data={slidesData} />
       default:
-        return <FetchErrorTryAgain getData={this.getData} />
+        return this.renderErrorPage()
     }
   }
 
