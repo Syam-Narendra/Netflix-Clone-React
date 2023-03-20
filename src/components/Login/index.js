@@ -1,5 +1,6 @@
 import {Component} from 'react'
 import {Redirect} from 'react-router-dom'
+import Loader from 'react-loader-spinner'
 import Cookies from 'js-cookie'
 import './index.css'
 
@@ -52,6 +53,8 @@ class Login extends Component {
     }
   }
 
+  renderButtonLoading = () => <Loader type="Oval" color="white" height={15} />
+
   render() {
     const {
       username,
@@ -78,6 +81,7 @@ class Login extends Component {
             USERNAME
           </label>
           <input
+            placeholder="rahul"
             onChange={this.setUserName}
             id="user-input"
             className="input-box"
@@ -93,11 +97,12 @@ class Login extends Component {
             id="password-input"
             value={password}
             type="password"
+            placeholder="rahul@2021"
           />
           {showError && <p className="error-message">{errorMsg}</p>}
 
           <button id="logInButton" type="submit" className="sign-in-button">
-            {isButtonLoading ? 'Loading' : 'Login'}
+            {isButtonLoading ? this.renderButtonLoading() : 'Login'}
           </button>
         </form>
       </div>

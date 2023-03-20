@@ -1,3 +1,4 @@
+import {v4} from 'uuid'
 import Cookies from 'js-cookie'
 import {Redirect, Route} from 'react-router-dom'
 
@@ -6,7 +7,7 @@ const ProtectedRoute = props => {
   if (token === undefined) {
     return <Redirect to="/login" />
   }
-  return <Route {...props} />
+  return <Route key={v4()} {...props} />
 }
 
 export default ProtectedRoute
